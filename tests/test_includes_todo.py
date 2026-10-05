@@ -1,4 +1,5 @@
 import pytest
+from lib.includes_todo import *
 
 def test_includes_todo_empty():
     assert includes_todo("") == False
@@ -7,7 +8,7 @@ def test_includes_todo_one_line():
     assert includes_todo("#TODO buy milk")
 
 def test_includes_todo_one_line_false():
-    assert includes_todo("buy milk")
+    assert not includes_todo("buy milk")
 
 def test_includes_todo_multiple_lines():
     text = "go to the shops\n#TODO buy milk\ngo home"
